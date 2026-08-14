@@ -3,6 +3,18 @@
    Comprehensive mobile-first polish for recruiter-wow
    ================================================ */
 
+/* ================================================
+   GLOBAL MOBILE OVERFLOW PREVENTION
+   Locks the viewport to prevent any horizontal scroll
+   ================================================ */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+
 /* Tablet landscape */
 @media (max-width:1024px) {
   .project-card { grid-template-columns:1fr; }
@@ -44,22 +56,22 @@
   .logo { font-size:clamp(0.78rem, 2.5vw, 0.95rem); }
 
   /* Hero — spacious and dramatic */
-  .hero { min-height:100svh; }
+  .hero { min-height:100svh; overflow:hidden; }
   .hero-grid {
     grid-template-columns:1fr;
     gap:16px;
     padding-top:40px;
     padding-bottom:60px;
   }
-  .hero-content { gap:20px; }
+  .hero-content { gap:20px; position:relative; overflow:hidden; }
   .hero-visual { display:none; } /* Hide particle constellation on mobile */
-  .hero-headline { font-size:clamp(2.2rem,9vw,3.2rem); }
+  .hero-headline { font-size:clamp(2.2rem,9vw,3.2rem); word-break:break-word; overflow-wrap:break-word; }
   .hero-greeting {
     font-size:0.92rem;
     color:var(--accent);
     opacity:0.9;
   }
-  .hero-pitch { font-size:.92rem; line-height:1.7; max-width:100%; }
+  .hero-pitch { font-size:.92rem; line-height:1.7; max-width:100%; overflow-wrap:break-word; }
   .hero-scroll-hint { display:none; }
 
   /* Status badge — polished */
@@ -138,6 +150,19 @@
     margin-bottom:32px;
     width:50px;
   }
+
+  /* Clip all sections to prevent overflow from orbs/decorators */
+  .skills, .projects, .achievements, .about, .hero, .metrics, .footer {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
+  /* Prevent fixed/absolute elements from causing overflow */
+  .section-orb { display:none; }
+  .hero-visual-glow { display:none; }
+  .bg-grid-overlay { max-width:100vw; }
+  .preloader .pre-blob { max-width:100vw; }
+  .scroll-progress { max-width:100vw; }
 
   /* Projects — premium card layout */
   .project-card { grid-template-columns:1fr; }
@@ -568,13 +593,14 @@
   .hero-content::after {
     content:'';
     position:absolute;
-    top:30%; right:-20%;
-    width:300px; height:300px;
+    top:30%; right:0;
+    width:200px; height:200px;
     background:radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 70%);
     border-radius:50%;
     pointer-events:none;
     animation:mobileGlow 6s ease-in-out infinite alternate;
     filter:blur(40px);
+    z-index:-1;
   }
   
   /* Tab active state for touch */
