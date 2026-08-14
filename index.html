@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranaav R. Gawali — AI & Data Science Engineer | Portfolio</title>
+  <meta name="description" content="Portfolio of Pranaav R. Gawali — AI & Data Science Engineer specializing in Python, Machine Learning, Cloud Architecture (Azure), and Full-Stack Development. SIH National Finalist. Published in Elsevier.">
+  <meta name="keywords" content="Pranaav Gawali, AI Engineer, Data Science, Machine Learning, Python, Azure, Portfolio, SPPU, SIH Finalist, Elsevier, Full-Stack Developer">
+  <meta name="author" content="Pranaav R. Gawali">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#06060a">
+
+  <!-- Canonical URL — UPDATE with your actual deployed URL -->
+  <link rel="canonical" href="https://pranavrgawali.github.io/portfolio/">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pranaav R. Gawali — AI & Data Science Engineer">
+  <meta property="og:description" content="AI & Data Science Engineer specializing in Python, ML, Cloud Architecture & Full-Stack Development. SIH National Finalist. Published in Elsevier.">
+  <meta property="og:url" content="https://pranavrgawali.github.io/portfolio/">
+  <meta property="og:site_name" content="Pranaav R. Gawali Portfolio">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pranaav R. Gawali — AI & Data Science Engineer">
+  <meta name="twitter:description" content="AI & Data Science Engineer specializing in Python, ML, Cloud Architecture & Full-Stack Development. SIH National Finalist.">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pranaav R. Gawali",
+    "jobTitle": "AI & Data Science Engineer",
+    "url": "https://pranavrgawali.github.io/portfolio/",
+    "sameAs": [
+      "https://github.com/pranavrgawali",
+      "https://www.linkedin.com/in/pranav-r-gawali-19689a32b/"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Savitribai Phule Pune University (SPPU)"
+    },
+    "knowsAbout": ["Artificial Intelligence", "Data Science", "Machine Learning", "Python", "Cloud Architecture", "Azure", "Full-Stack Development"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23818cf8'/%3E%3Cstop offset='100%25' stop-color='%23e879f9'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' rx='30' fill='%2306060a'/%3E%3Ctext x='50%25' y='65%25' font-family='monospace' font-weight='bold' font-size='42' fill='url(%23g)' text-anchor='middle'%3E%26lt;P/%26gt;%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="bg-grid-overlay"></div>
+  <canvas id="webgl-canvas"></canvas>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <!-- Cursor trail elements -->
+  <div class="cursor-trail" id="cursorTrail"></div>
+  <div class="preloader" id="preloader">
+    <!-- Morphing gradient blobs -->
+    <div class="pre-blob pre-blob--1"></div>
+    <div class="pre-blob pre-blob--2"></div>
+    <div class="pre-blob pre-blob--3"></div>
+
+    <div class="pre-inner">
+      <!-- Logo with SVG progress ring -->
+      <div class="pre-logo-wrap">
+        <div class="pre-lens-flare"></div>
+        <svg class="pre-ring" id="preRing" viewBox="0 0 120 120" width="120" height="120">
+          <circle class="pre-ring-track" cx="60" cy="60" r="54" />
+          <circle class="pre-ring-fill" id="preRingFill" cx="60" cy="60" r="54" />
+        </svg>
+        <div class="pre-logo-text" id="preLogoText">
+          <span class="pre-char" style="--i:0">&lt;</span><span class="pre-char" style="--i:1">P</span><span class="pre-char" style="--i:2">/</span><span class="pre-char" style="--i:3">&gt;</span>
+        </div>
+      </div>
+
+      <!-- Percentage counter -->
+      <div class="pre-counter" id="preCounter">
+        <span class="pre-counter-num" id="preCounterNum">0</span><span class="pre-counter-pct">%</span>
+      </div>
+
+      <!-- Tagline -->
+      <div class="pre-tagline" id="preTagline">
+        <span class="pre-word">Building</span>
+        <span class="pre-word">the</span>
+        <span class="pre-word">future</span>
+        <span class="pre-word pre-word--accent">.</span>
+      </div>
+    </div>
+
+    <!-- Particle burst container -->
+    <div class="pre-particles" id="preParticles"></div>
+
+    <!-- Horizontal progress bar -->
+    <div class="pre-bar" id="preBar">
+      <div class="pre-bar-fill" id="preBarFill"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <a href="#" class="logo mag">&lt; Pranaav R. Gawali /&gt;</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#skills" class="nav-link mag">Skills</a>
+      <a href="#projects" class="nav-link mag">Projects</a>
+      <a href="#achievements" class="nav-link mag">Achievements</a>
+      <a href="#about" class="nav-link mag">About</a>
+      <a href="#contact" class="nav-link mag">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="sound-toggle mag" id="soundToggle" aria-label="Enable sounds">
+        <svg class="sound-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        <svg class="sound-on-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+      </button>
+      <button class="hamburger mag" id="hamburger" aria-label="Toggle menu"><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#achievements" class="mobile-link">Achievements</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- FLOATING SOCIAL SIDEBAR -->
+  <aside class="social-sidebar" id="socialSidebar">
+    <a href="https://github.com/pranavrgawali" target="_blank" rel="noopener" class="sidebar-icon mag" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+    <a href="https://www.linkedin.com/in/pranav-r-gawali-19689a32b/" target="_blank" rel="noopener" class="sidebar-icon mag" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://leetcode.com/" target="_blank" rel="noopener" class="sidebar-icon mag" aria-label="LeetCode"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+    <div class="sidebar-line"></div>
+  </aside>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-grid wrap">
+      <div class="hero-content">
+        <div class="status-badge anim-el"><span class="status-dot"></span>Open to Opportunities</div>
+        <div class="hero-greeting anim-el">Hi, I'm</div>
+        <h1 class="hero-headline">
+          <span class="hero-line">Pranaav R.</span>
+          <span class="hero-line"><span class="gradient-text">Gawali.</span></span>
+        </h1>
+        <div class="hero-roles anim-el">
+          <span class="roles-prefix">I'm a</span>
+          <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+        </div>
+        <div class="hero-badge anim-el">AI & DATA SCIENCE ENGINEERING STUDENT · PYTHON, ML & CLOUD ARCHITECTURE</div>
+        <p class="hero-pitch anim-el">I engineer AI systems that turn raw data into actionable predictions — from autonomous financial forecasting platforms to privacy-first cloud architectures deployed on Azure. SIH National Finalist. Published in Elsevier.</p>
+        <div class="hero-actions anim-el">
+          <a href="#projects" class="btn btn-primary mag"><span>View My Work</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <a href="https://drive.google.com/file/d/1WLmWs9mjGYcmXyaoqdNrOFGyLvzSfwGs/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-secondary mag"><span>Download Resume</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+        <div class="hero-socials anim-el">
+          <a href="https://github.com/pranavrgawali" target="_blank" rel="noopener" class="social-icon mag" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/pranav-r-gawali-19689a32b/" target="_blank" rel="noopener" class="social-icon mag" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://leetcode.com/" target="_blank" rel="noopener" class="social-icon mag" aria-label="LeetCode"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+        </div>
+      </div>
+      <!-- Animated particle constellation -->
+      <div class="hero-visual" id="heroVisual">
+        <div class="hero-visual-glow"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- IMPACT METRICS -->
+  <section class="metrics wrap" id="metrics">
+    <div class="metrics-grid">
+      <div class="metric-card glass-card">
+        <span class="metric-number" data-target="4">0</span><span class="metric-suffix">+</span>
+        <span class="metric-label">Projects Shipped</span>
+      </div>
+      <div class="metric-card glass-card">
+        <span class="metric-number" data-target="14">0</span><span class="metric-suffix">+</span>
+        <span class="metric-label">Certifications</span>
+      </div>
+      <div class="metric-card glass-card">
+        <span class="metric-number" data-target="1">0</span><span class="metric-suffix"></span>
+        <span class="metric-label">Elsevier Publication</span>
+      </div>
+      <div class="metric-card glass-card">
+        <span class="metric-value">SIH</span>
+        <span class="metric-label">National Finalist</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SKILLS MATRIX -->
+  <section class="skills wrap" id="skills">
+    <div class="section-orb section-orb--1"></div>
+    <div class="section-header"><span class="section-label">UNDER THE HOOD</span><h2 class="section-title">Skills Matrix</h2></div>
+    <div class="skills-grid">
+      <div class="skill-group glass-card"><h3 class="skill-group-title">Core Languages</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">Java</span><span class="skill-tag">C</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span></div></div>
+      <div class="skill-group glass-card"><h3 class="skill-group-title">AI / ML</h3><div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">Regression Analysis</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">OpenCV</span><span class="skill-tag">NumPy</span></div></div>
+      <div class="skill-group glass-card"><h3 class="skill-group-title">Web & Cloud</h3><div class="skill-tags"><span class="skill-tag">Azure</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Flask</span><span class="skill-tag">HTML / CSS / JS</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span></div></div>
+      <div class="skill-group glass-card"><h3 class="skill-group-title">Databases & Tools</h3><div class="skill-tags"><span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Git</span><span class="skill-tag">Docker</span><span class="skill-tag">REST APIs</span></div></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURED PROJECTS -->
+  <section class="projects wrap" id="projects">
+    <div class="section-orb section-orb--2"></div>
+    <div class="section-header"><span class="section-label">SHOW, DON'T TELL</span><h2 class="section-title">Featured Projects</h2></div>
+    <div class="projects-grid">
+
+      <!-- 01: FINARCH -->
+      <article class="project-card glass-card">
+        <div class="card-image card-slider">
+          <div class="slider-track">
+            <div class="slider-slide"><img src="assets/projects/finarch-1.png" alt="FINARCH Dashboard" loading="lazy"></div>
+            <div class="slider-slide"><img src="assets/projects/finarch-2.png" alt="FINARCH Debt Decelerator" loading="lazy"></div>
+            <div class="slider-slide"><img src="assets/projects/finarch-3.png" alt="FINARCH Investment Oracle" loading="lazy"></div>
+            <div class="slider-slide"><img src="assets/projects/finarch-4.png" alt="FINARCH Credit Recommender" loading="lazy"></div>
+          </div>
+          <button class="slider-btn prev" aria-label="Previous image"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="slider-btn next" aria-label="Next image"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <div class="slider-dots"></div>
+          <div class="card-overlay"><span class="overlay-text">View Details</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title">FINARCH</h3><span class="card-number">01</span></div>
+          <div class="card-subtitle">Autonomous Financial Intelligence Platform</div>
+          <div class="card-section"><h4 class="card-label">The Goal</h4><p class="card-text">To engineer an AI-driven Personal CA that replaces static budget tracking with dynamic, autonomous financial forecasting and investment recommendations.</p></div>
+          <div class="card-section"><h4 class="card-label">Engineering Highlight</h4><p class="card-text">Transitioned away from basic classification to engineer predictive financial models utilizing a <strong>Random Forest regression approach</strong>, allowing the system to process continuous numerical data for highly accurate forecasting. Integrated complex analytical outputs into an intuitive, real-time dashboard for actionable decision support.</p></div>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Scikit-learn</span><span class="tag">Data Visualization</span></div>
+          <div class="card-links"><a href="#" class="card-btn mag">GitHub</a><a href="#" class="card-btn mag">Live Demo</a></div>
+        </div>
+      </article>
+
+      <!-- 02: Sozo -->
+      <article class="project-card glass-card">
+        <div class="card-image card-slider">
+          <div class="slider-track">
+            <div class="slider-slide"><img src="assets/projects/sozo_1.png" alt="Sozo — Privacy-First Social Sanctuary" loading="lazy"></div>
+            <div class="slider-slide"><img src="assets/projects/sozo_2.png" alt="Sozo — App Interface" loading="lazy"></div>
+            <div class="slider-slide"><img src="assets/projects/sozo_3.png" alt="Sozo — Features Overview" loading="lazy"></div>
+          </div>
+          <button class="slider-btn prev" aria-label="Previous image"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="slider-btn next" aria-label="Next image"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <div class="slider-dots"></div>
+          <div class="card-overlay"><span class="overlay-text">View Details</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title">Sozo</h3><span class="card-number">02</span></div>
+          <div class="card-subtitle">The Privacy-First Social Sanctuary</div>
+          <div class="card-section"><h4 class="card-label">The Goal</h4><p class="card-text">To architect a highly secure, distraction-free digital ecosystem that counters algorithmic fatigue and guarantees absolute user privacy.</p></div>
+          <div class="card-section"><h4 class="card-label">Engineering Highlight</h4><p class="card-text">Engineered a <strong>zero-knowledge data pipeline</strong> operating as a cryptographic black box to prevent server-side interception. Deployed a scalable backend on <strong>Microsoft Azure</strong> with custom connection pooling and vertical database partitioning for near-zero latency. Designed a premium ad-free glassmorphism interface with anonymous onboarding.</p></div>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Microsoft Azure</span><span class="tag">UI/UX</span><span class="tag">Glassmorphism</span></div>
+          <div class="card-links"><a href="#" class="card-btn mag">GitHub</a><a href="#" class="card-btn mag">Live Demo</a></div>
+        </div>
+      </article>
+
+      <!-- 03: Crop Connect -->
+      <article class="project-card glass-card">
+        <div class="card-image"><img src="assets/projects/cropconnect.png" alt="Crop Connect — AgriTech Supply Chain Platform" loading="lazy"><div class="card-overlay"><span class="overlay-text">View Details</span></div></div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title">Crop Connect</h3><span class="card-number">03</span></div>
+          <div class="card-subtitle">Agri-Tech Supply Chain Platform</div>
+          <div class="card-section"><h4 class="card-label">The Goal</h4><p class="card-text">To dismantle inefficiencies in the agricultural supply chain by creating a direct-to-consumer digital marketplace powered by real-time negotiation and AI advisory tools.</p></div>
+          <div class="card-section"><h4 class="card-label">Engineering Highlight</h4><p class="card-text">Implemented a <strong>lightweight CSV data architecture</strong> via Pandas for rapid state synchronization. Engineered an AI crop advisory system and interactive Plotly dashboards for price trends and fertilizer optimization. Authored technical research achieving <strong>international peer review in an Elsevier journal</strong>.</p></div>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Plotly</span></div>
+          <div class="card-links"><a href="#" class="card-btn mag">GitHub</a><a href="#" class="card-btn mag">Live Demo</a></div>
+        </div>
+      </article>
+
+      <!-- 04: MetroOps -->
+      <article class="project-card glass-card">
+        <div class="card-image"><img src="assets/projects/metroops.png" alt="MetroOps — Kochi Metro Operations Portal" loading="lazy"><div class="card-overlay"><span class="overlay-text">View Details</span></div></div>
+        <div class="card-body">
+          <div class="card-header"><h3 class="card-title">MetroOps</h3><span class="card-number">04</span></div>
+          <div class="card-subtitle">Kochi Metro Operations Portal · <strong>SIH Finalist</strong></div>
+          <div class="card-section"><h4 class="card-label">The Goal</h4><p class="card-text">To transform Kochi Metro's traditional fleet maintenance into a proactive, data-driven strategy — built as a <strong>Smart India Hackathon (SIH) Finalist</strong> project.</p></div>
+          <div class="card-section"><h4 class="card-label">Engineering Highlight</h4><p class="card-text">Engineered an enterprise-grade <strong>predictive maintenance solution</strong> using a Scikit-learn Random Forest model tailored to fleet data. Built a responsive BI dashboard with Chart.js for KPI visualization, mileage balancing, and resource allocation. Deployed risk simulation engines to automate maintenance workflows.</p></div>
+          <div class="card-tags"><span class="tag">Scikit-learn</span><span class="tag">JavaScript</span><span class="tag">Chart.js</span><span class="tag">Random Forest</span></div>
+          <div class="card-links"><a href="#" class="card-btn mag">GitHub</a><a href="#" class="card-btn mag">Live Demo</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 4. ACHIEVEMENTS & AUTHORITY (Tabbed) -->
+  <section class="achievements wrap" id="achievements">
+    <div class="section-orb section-orb--3"></div>
+    <div class="section-header"><span class="section-label">THE DIFFERENTIATOR</span><h2 class="section-title">Achievements & Authority</h2></div>
+
+    <!-- Tab Navigation -->
+    <div class="tabs-nav" id="tabsNav">
+      <button class="tab-btn active mag" data-tab="certifications"><span class="tab-icon">🎓</span>Certifications</button>
+      <button class="tab-btn mag" data-tab="hackathons"><span class="tab-icon">🏆</span>Hackathons</button>
+      <button class="tab-btn mag" data-tab="publications"><span class="tab-icon">📄</span>Publications</button>
+      <button class="tab-btn mag" data-tab="simulations"><span class="tab-icon">💼</span>Job Simulations</button>
+    </div>
+
+    <!-- Tab Panels -->
+    <div class="tabs-content glass-card" id="tabsContent">
+
+      <!-- Hackathons Panel -->
+      <div class="tab-panel" id="tab-hackathons">
+        <div class="achieve-item">
+          <h4>Smart India Hackathon (SIH) — Finalist 🏅</h4>
+          <p>Selected as a <strong>national finalist</strong> in the Smart India Hackathon. Built an enterprise-grade predictive maintenance solution under 36-hour pressure. Engineered an ML pipeline using Random Forest classifiers to predict equipment failure for a real-world government stakeholder.</p>
+          <div class="achieve-tags"><span class="tag">SIH Finalist</span><span class="tag">Random Forest</span><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Government Stakeholder</span></div>
+        </div>
+      </div>
+
+      <!-- Publications Panel -->
+      <div class="tab-panel" id="tab-publications">
+        <div class="achieve-item">
+          <h4>Elsevier International Journal</h4>
+          <p>AgriTech data management architecture achieved international peer review and publication in an <strong>Elsevier journal</strong> — one of the world's leading academic publishers. This work validates research-grade methodology and academic rigor at the undergraduate level.</p>
+          <div class="achieve-tags"><span class="tag">Elsevier</span><span class="tag">Peer-Reviewed</span><span class="tag">AgriTech</span><span class="tag">Data Architecture</span></div>
+          <a href="#" class="card-btn mag" style="margin-top:16px;">View Publication</a>
+        </div>
+      </div>
+
+      <!-- Job Simulations Panel -->
+      <div class="tab-panel" id="tab-simulations">
+        <div class="cert-grid">
+          <div class="cert-card glass-card">
+            <div class="cert-icon">☁️</div>
+            <h4>AWS Job Simulation</h4>
+            <p>Completed AWS cloud architecture and solutions design virtual experience program.</p>
+            <div class="achieve-tags"><span class="tag">AWS</span><span class="tag">Cloud</span></div>
+            <a href="assets/Certificates/AWS Job simu Certificate.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">📊</div>
+            <h4>Deloitte Data Analytics Job Simulation</h4>
+            <p>Completed Deloitte's data analytics virtual experience focusing on enterprise-grade data pipelines and insight generation.</p>
+            <div class="achieve-tags"><span class="tag">Deloitte</span><span class="tag">Data Analytics</span></div>
+            <a href="assets/Certificates/Deloitte Data Analystics Job Simulation Certificate.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Panel -->
+      <div class="tab-panel active" id="tab-certifications">
+
+        <!-- Google Data Analytics Professional Certificate — Collapsible Course -->
+        <div class="course-dropdown glass-card" id="googleCourseDropdown">
+          <button class="course-dropdown-header mag" id="googleCourseToggle" aria-expanded="false">
+            <div class="course-info">
+              <div class="cert-icon">🎓</div>
+              <div>
+                <h4>Google Data Analytics Professional Certificate</h4>
+                <p class="course-subtitle">Multi-course professional certification by Google — 2 modules completed</p>
+              </div>
+            </div>
+            <svg class="course-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="course-dropdown-body" id="googleCourseBody">
+            <div class="course-modules">
+              <div class="course-module">
+                <span class="module-badge">Module 1</span>
+                <span class="module-title">Foundations: Data, Data, Everywhere</span>
+                <a href="assets/Certificates/Google Data Science 1.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View</a>
+              </div>
+              <div class="course-module">
+                <span class="module-badge">Module 2</span>
+                <span class="module-title">Ask Questions to Make Data-Driven Decisions</span>
+                <a href="assets/Certificates/Google Data Science 2.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Individual Certifications -->
+        <div class="cert-grid">
+          <div class="cert-card glass-card">
+            <div class="cert-icon">☁️</div>
+            <h4>Cloud Computing</h4>
+            <p>Cloud computing certification from MMCOE covering cloud infrastructure, deployment models, and service architectures.</p>
+            <div class="achieve-tags"><span class="tag">Cloud</span><span class="tag">MMCOE</span></div>
+            <a href="assets/Certificates/Cloud computing certificate MMCOE.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🧮</div>
+            <h4>Data Structures & Algorithms</h4>
+            <p>Comprehensive DSA certification covering advanced algorithmic problem-solving and data structure implementation.</p>
+            <div class="achieve-tags"><span class="tag">DSA</span><span class="tag">Problem Solving</span></div>
+            <a href="assets/Certificates/DSA.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🔒</div>
+            <h4>HP Cyber Security</h4>
+            <p>HP cybersecurity certification covering network security, threat detection, and enterprise security protocols.</p>
+            <div class="achieve-tags"><span class="tag">Cybersecurity</span><span class="tag">HP</span></div>
+            <a href="assets/Certificates/HP Cyber security Certificate.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🏛️</div>
+            <h4>IIT Bombay Placement</h4>
+            <p>Placement certification from IIT Bombay validating technical aptitude and industry-readiness competencies.</p>
+            <div class="achieve-tags"><span class="tag">IIT Bombay</span><span class="tag">Placement</span></div>
+            <a href="assets/Certificates/IIT B placement certificate_.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🤖</div>
+            <h4>Introduction to Generative AI</h4>
+            <p>Google Cloud certification covering fundamentals of generative AI, large language models, and responsible AI development.</p>
+            <div class="achieve-tags"><span class="tag">Generative AI</span><span class="tag">Google Cloud</span></div>
+            <a href="assets/Certificates/Intr to generate Ai.png" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">⚖️</div>
+            <h4>Introduction to Responsible AI</h4>
+            <p>Google Cloud certification on responsible AI principles, bias mitigation, fairness frameworks, and ethical AI deployment.</p>
+            <div class="achieve-tags"><span class="tag">Responsible AI</span><span class="tag">Google Cloud</span></div>
+            <a href="assets/Certificates/Intr to responsible Ai.png" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">📐</div>
+            <h4>MATLAB</h4>
+            <p>MATLAB certification covering numerical computing, data analysis, algorithm development, and engineering simulations.</p>
+            <div class="achieve-tags"><span class="tag">MATLAB</span><span class="tag">Numerical Computing</span></div>
+            <a href="assets/Certificates/Matlab certificate.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🗄️</div>
+            <h4>SQL</h4>
+            <p>SQL certification covering database querying, joins, aggregations, subqueries, and performance optimization.</p>
+            <div class="achieve-tags"><span class="tag">SQL</span><span class="tag">Databases</span></div>
+            <a href="assets/Certificates/SQL.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🧠</div>
+            <h4>Tata Crucible Prelims</h4>
+            <p>Participated in Tata Crucible — one of India's premier business and technology quiz competitions at Level 1 prelims.</p>
+            <div class="achieve-tags"><span class="tag">Tata Crucible</span><span class="tag">Quiz</span></div>
+            <a href="assets/Certificates/Tata_Cruible_Prelims_Level1.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+          <div class="cert-card glass-card">
+            <div class="cert-icon">🐍</div>
+            <h4>Python Programming</h4>
+            <p>Udemy Python programming certification covering advanced Python concepts, OOP, and real-world project development.</p>
+            <div class="achieve-tags"><span class="tag">Python</span><span class="tag">Udemy</span></div>
+            <a href="assets/Certificates/Udemy python.pdf" target="_blank" class="cert-link mag"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Certificate</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- 5. ABOUT ME & EDUCATION -->
+  <section class="about wrap" id="about">
+    <div class="section-header"><span class="section-label">THE PERSON</span><h2 class="section-title">About Me</h2></div>
+    <div class="about-grid">
+      <div class="about-bio glass-card">
+        <p>I chose AI & Data Science because I'm fascinated by systems that learn — the idea that code can evolve beyond its original instructions to uncover patterns humans miss. That curiosity has driven me to build everything from autonomous financial forecasting engines to privacy-first social platforms deployed on Azure.</p>
+        <p>What sets me apart isn't just technical skill — it's the ability to take a vague problem, architect a complete solution, and ship it. From being an SIH National Finalist to publishing research in Elsevier at the undergraduate level, I thrive under pressure and deliver production-quality work, not just prototypes.</p>
+      </div>
+      <div class="about-details glass-card">
+        <div class="detail-row"><span class="detail-label">Degree</span><span class="detail-value">B.Tech — AI & Data Science</span></div>
+        <div class="detail-row"><span class="detail-label">University</span><span class="detail-value">Savitribai Phule Pune University (SPPU)</span></div>
+        <div class="detail-row"><span class="detail-label">College</span><span class="detail-value">MMCOE, Pune</span></div>
+        <div class="detail-row"><span class="detail-label">Expected Graduation</span><span class="detail-value">May 2028</span></div>
+        <div class="detail-row"><span class="detail-label">Location</span><span class="detail-value">Pune, India</span></div>
+        <div class="detail-row"><span class="detail-label">Focus Areas</span><span class="detail-value">ML Engineering, Cloud Architecture, Full-Stack Development</span></div>
+        <div class="detail-row"><span class="detail-label">Languages</span><span class="detail-value">English, Hindi, Marathi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT & FOOTER -->
+  <footer class="footer wrap" id="contact">
+    <div class="footer-top">
+      <span class="section-label">GET IN TOUCH</span>
+      <a href="mailto:pranavrgawali96@gmail.com" class="footer-cta mag">Let's Talk <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pranaav R. Gawali</span>
+      <div class="footer-center">
+        <a href="https://github.com/pranavrgawali" target="_blank" class="footer-social mag">GitHub</a>
+        <span class="footer-divider">/</span>
+        <a href="https://www.linkedin.com/in/pranav-r-gawali-19689a32b/" target="_blank" class="footer-social mag">LinkedIn</a>
+        <span class="footer-divider">/</span>
+        <a href="https://leetcode.com/" target="_blank" class="footer-social mag">LeetCode</a>
+      </div>
+      <span>Designed & Engineered by Pranaav R. Gawali | 2026</span>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/webgl-liquid.js"></script>
+  <script src="js/hero-particles.js"></script>
+</body>
+</html>
