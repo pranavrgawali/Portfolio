@@ -281,7 +281,8 @@
         preParticles.appendChild(p);
 
         const angle = (Math.PI * 2 * i) / particleCount + (Math.random() - 0.5) * 0.5;
-        const dist = 200 + Math.random() * 400;
+        const maxDist = window.innerWidth <= 768 ? Math.min(window.innerWidth * 0.35, 120) : (200 + Math.random() * 400);
+        const dist = window.innerWidth <= 768 ? (40 + Math.random() * maxDist) : (200 + Math.random() * 400);
 
         gsap.to(p, {
           x: Math.cos(angle) * dist,
@@ -546,13 +547,15 @@
       );
     });
 
-    // Project cards — staggered reveal from alternating sides
+    // Project cards — staggered reveal (from Y on mobile to avoid horizontal shift)
     document.querySelectorAll('.project-card').forEach((card, i) => {
-      const fromX = i % 2 === 0 ? -60 : 60;
+      const isMobile = window.innerWidth <= 768;
+      const fromX = isMobile ? 0 : (i % 2 === 0 ? -60 : 60);
+      const fromY = isMobile ? 40 : 0;
       gsap.fromTo(card,
-        { opacity:0, x:fromX, filter:'blur(6px)' },
+        { opacity:0, x:fromX, y:fromY, filter:'blur(6px)' },
         {
-          opacity:1, x:0, filter:'blur(0px)',
+          opacity:1, x:0, y:0, filter:'blur(0px)',
           duration:1.0, ease:'power3.out',
           scrollTrigger:{ trigger:card, start:'top 85%', once:true }
         }
