@@ -51,15 +51,26 @@
   }
   </script>
 
+  <!-- DNS Prefetch & Preconnect for faster CDN resolution -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23818cf8'/%3E%3Cstop offset='100%25' stop-color='%23e879f9'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' rx='30' fill='%2306060a'/%3E%3Ctext x='50%25' y='65%25' font-family='monospace' font-weight='bold' font-size='42' fill='url(%23g)' text-anchor='middle'%3E%26lt;P/%26gt;%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Critical CSS — loaded synchronously -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Google Fonts — non-render-blocking with swap -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23818cf8'/%3E%3Cstop offset='100%25' stop-color='%23e879f9'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' rx='30' fill='%2306060a'/%3E%3Ctext x='50%25' y='65%25' font-family='monospace' font-weight='bold' font-size='42' fill='url(%23g)' text-anchor='middle'%3E%26lt;P/%26gt;%3C/text%3E%3C/svg%3E">
 </head>
 
 <body>
@@ -301,14 +312,14 @@
       <article class="project-card glass-card">
         <div class="card-image card-slider">
           <div class="slider-track">
-            <div class="slider-slide"><img src="assets/projects/finarch-1.png" alt="FINARCH Dashboard" loading="lazy">
+            <div class="slider-slide"><img src="assets/projects/finarch-1.png" alt="FINARCH Dashboard" loading="lazy" decoding="async">
             </div>
             <div class="slider-slide"><img src="assets/projects/finarch-2.png" alt="FINARCH Debt Decelerator"
-                loading="lazy"></div>
+                loading="lazy" decoding="async"></div>
             <div class="slider-slide"><img src="assets/projects/finarch-3.png" alt="FINARCH Investment Oracle"
-                loading="lazy"></div>
+                loading="lazy" decoding="async"></div>
             <div class="slider-slide"><img src="assets/projects/finarch-4.png" alt="FINARCH Credit Recommender"
-                loading="lazy"></div>
+                loading="lazy" decoding="async"></div>
           </div>
           <button class="slider-btn prev" aria-label="Previous image"><svg width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2">
@@ -350,11 +361,11 @@
         <div class="card-image card-slider">
           <div class="slider-track">
             <div class="slider-slide"><img src="assets/projects/sozo_1.png" alt="Sozo — Privacy-First Social Sanctuary"
-                loading="lazy"></div>
-            <div class="slider-slide"><img src="assets/projects/sozo_2.png" alt="Sozo — App Interface" loading="lazy">
+                loading="lazy" decoding="async"></div>
+            <div class="slider-slide"><img src="assets/projects/sozo_2.png" alt="Sozo — App Interface" loading="lazy" decoding="async">
             </div>
             <div class="slider-slide"><img src="assets/projects/sozo_3.png" alt="Sozo — Features Overview"
-                loading="lazy"></div>
+                loading="lazy" decoding="async"></div>
           </div>
           <button class="slider-btn prev" aria-label="Previous image"><svg width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2">
@@ -394,7 +405,7 @@
       <!-- 03: Crop Connect -->
       <article class="project-card glass-card">
         <div class="card-image"><img src="assets/projects/cropconnect.png"
-            alt="Crop Connect — AgriTech Supply Chain Platform" loading="lazy">
+            alt="Crop Connect — AgriTech Supply Chain Platform" loading="lazy" decoding="async">
           <div class="card-overlay"><span class="overlay-text">View Details</span></div>
         </div>
         <div class="card-body">
@@ -424,7 +435,7 @@
       <!-- 04: MetroOps -->
       <article class="project-card glass-card">
         <div class="card-image"><img src="assets/projects/metroops.png" alt="MetroOps — Kochi Metro Operations Portal"
-            loading="lazy">
+            loading="lazy" decoding="async">
           <div class="card-overlay"><span class="overlay-text">View Details</span></div>
         </div>
         <div class="card-body">
@@ -541,7 +552,7 @@
               <div class="cert-icon">🎓</div>
               <div>
                 <h4>Google Data Analytics Professional Certificate</h4>
-                <p class="course-subtitle">Multi-course professional certification by Google — 2 modules completed</p>
+                <p class="course-subtitle">Multi-course professional certification by Google — 3 modules completed</p>
               </div>
             </div>
             <svg class="course-chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -565,6 +576,16 @@
                 <span class="module-badge">Module 2</span>
                 <span class="module-title">Ask Questions to Make Data-Driven Decisions</span>
                 <a href="assets/Certificates/Google Data Science 2.pdf" target="_blank" class="cert-link mag"><svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>View</a>
+              </div>
+              <div class="course-module">
+                <span class="module-badge">Module 3</span>
+                <span class="module-title">Prepare Data for Exploration</span>
+                <a href="assets/Certificates/Google Data Science 3.pdf" target="_blank" class="cert-link mag"><svg
                     width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
@@ -779,15 +800,18 @@
     </svg>
   </button>
 
+  <!-- Core libraries — GSAP must load before app.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- App logic -->
   <script src="js/cursor.js"></script>
-  <script src="js/sound.js"></script>
+  <script src="js/sound.js" defer></script>
   <script src="js/app.js"></script>
-  <script src="js/webgl-liquid.js"></script>
-  <script src="js/hero-particles.js"></script>
+  <!-- Visual effects — deferred since below-the-fold / non-critical -->
+  <script src="js/webgl-liquid.js" defer></script>
+  <script src="js/hero-particles.js" defer></script>
 </body>
 
 </html>
